@@ -102,6 +102,7 @@ const Auth = () => {
           throw new Error(response)
         }
         auth.login(response.data.userId, response.data.token)
+        navigate('/')
       } catch (err) {
         console.log(err)
       }
@@ -123,9 +124,9 @@ const Auth = () => {
           throw new Error(response)
         }
         auth.login(response.data.userId, response.data.token)
+        navigate('/')
       } catch (err) {}
     }
-    navigate('/')
   }
 
   // ~ UI
