@@ -29,11 +29,20 @@ const PlaceItem = ({ place, onDelete }) => {
   const confirmDeleteHandler = async () => {
     setShowConfirmModal(false)
     try {
-      await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places/${id}`, 'DELETE', null,{
-        Authorization: 'Bearer ' + auth.token
-      })
+      await sendRequest(
+        `${process.env.REACT_APP_BACKEND_URL}/places/${id}`,
+        'DELETE',
+        null,
+        {
+          Authorization: 'Bearer ' + auth.token,
+        }
+      )
       onDelete(id)
     } catch (err) {}
+  }
+
+  const handleImageError = (e) => {
+    e.target.src = '/assets/images/house.png'
   }
 
   return (
@@ -72,7 +81,11 @@ const PlaceItem = ({ place, onDelete }) => {
         <CardStyled>
           {isLoading && <LoadingSpinner asOverlay />}
           <ImgStyled>
-            <img src={`${process.env.REACT_APP_ASSET_URL}/${image}`} alt={title} />
+            <img
+              src={`${process.env.REACT_APP_ASSET_URL}/${image}`}
+              onError={handleImageError}
+              alt={title}
+            />
           </ImgStyled>
 
           <InfoDivStyled>

@@ -13,6 +13,7 @@ import {
 
 const UserItem = ({ user }) => {
   const { id, name, image, places } = user
+
   return (
     <UserItemStyled>
       <Card style={{ padding: 0 }}>

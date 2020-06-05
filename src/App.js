@@ -6,12 +6,6 @@ import styled, { ThemeProvider } from 'styled-components'
 import { useRoutes } from 'hookrouter'
 
 // My imports
-// import Users from './pages/Users'
-// import NewPlace from './pages/NewPlace'
-// import NotFoundPage from './pages/NotFoundPage'
-// import UserPlaces from './pages/UserPlaces'
-// import UpdatePlace from './pages/UpdatePlace'
-// import Auth from './pages/Auth'
 import MainNavigation from './components/Shared/Navigation/MainNavigation'
 import { Theme } from './styles/theme'
 import { AuthContext } from './context/auth-context'
